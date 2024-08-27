@@ -1,0 +1,20 @@
+{{- if .Values.route.enabled -}}
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: qotd-website
+  labels:
+    {{- include "qotdsystem.labels" . | nindent 4 }}
+    app: qotd-website
+spec:
+  to:
+    kind: Service
+    name: qotd-website
+    weight: 100
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+{{- end }}

@@ -1,0 +1,27 @@
+# Default values for netcandystore.
+
+ssh:
+  username: "administrator"
+
+qotdbackend:
+  image: "quay.io/donschenck/qotd:db"
+  dbpassword: "reallylongpassword99!"
+  dbstorage: "8Gi"
+  dbhost: "postres"
+  dbuser: "qotd"
+  dbname: "quotesdb"
+     
+qotdwebsite:
+  image: "quay.io/donschenck/qotd-website-nodejs:latest"
+
+frontend:
+  replicas: 1
+
+backend:
+  replicas: 1
+
+route:
+  enabled: true
+
+service:
+  port: 8080

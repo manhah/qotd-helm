@@ -1,0 +1,40 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: qotd-backend
+  labels:
+    {{- include "qotdsystem.labels" . | nindent 4 }}
+    app: qotd-backend
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      app: qotd-backend
+  template:
+    metadata:
+      # {{- with .Values.podAnnotations }}
+      # annotations:
+      #   {{- toYaml . | nindent 8 }}
+      # {{- end }}
+      labels:
+        {{- include "qotdsystem.selectorLabels" . | nindent 8 }}
+        app: qotd-backend
+        deploymentconfig: qotd-backend
+    spec:
+      containers:
+        - name: qotd-backend
+          image: {{ .Values.qotdbackend.image | quote }}
+          ports:
+            - containerPort: 10000
+              protocol: TCP
+          env:
+            - name: USE_DB
+              value: "true"
+            - name: DBPASSWORD
+              value: {{ .Values.qotdbackend.dbpassword | quote }}
+            - name: DBHOST
+              value: {{ .Values.qotdbackend.dbhost | quote }}
+            - name: DBUSER
+              value: {{ .Values.qotdbackend.dbuser | quote }}
+            - name: DBNAME
+              value: {{ .Values.qotdbackend.dbname | quote }}

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: qotd-website
+    {{- include "qotdsystem.labels" . | nindent 4 }}
+  name: qotd-website
+spec:
+  selector:
+    matchLabels:
+      app: qotd-website
+  replicas: {{ .Values.frontend.replicas }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "qotdsystem.selectorLabels" . | nindent 8 }}
+        app: qotd-website
+      name: qotd-website
+    spec:
+      containers:
+      - name: qotd-website
+        image: {{ .Values.qotdwebsite.image | quote }}
+        env:
+          - name: QOTD_API_URL
+            value: '##QOTD_API_URL##'
+        imagePullPolicy: Always

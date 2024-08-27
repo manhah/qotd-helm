@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: qotd-backend
+  labels:
+    {{- include "qotdsystem.labels" . | nindent 4 }}
+    app: qotd-backend
+spec:
+  ports:
+    - name: 10000-tcp
+      protocol: TCP
+      port: 10000
+      targetPort: 10000
+  selector:
+    app: qotd-backend
+    deploymentconfig: qotd-backend
+status:
+  loadBalancer: {}
