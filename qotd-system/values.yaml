@@ -1,18 +1,15 @@
-# Default values for netcandystore.
-
-ssh:
-  username: "administrator"
+# Default values for Quote of the Day system.
 
 qotdbackend:
-  image: "quay.io/donschenck/qotd:db"
+  image: "quay.io/rhdevelopers/qotd:db"
   dbpassword: "reallylongpassword99!"
   dbstorage: "8Gi"
-  dbhost: "postres"
+  dbhost: "postgres"
   dbuser: "qotd"
   dbname: "quotesdb"
      
 qotdwebsite:
-  image: "quay.io/donschenck/qotd-website-nodejs:latest"
+  image: "quay.io/rhdevelopers/qotd-website-nodejs:latest"
 
 frontend:
   replicas: 1

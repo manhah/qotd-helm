@@ -1,1 +1,28 @@
-Quote of the Day application 
+Quote of the Day system
+This system is made up of three parts:
+1. qotd-website
+The website that displays a quote
+
+2. qotd-backend
+Backend service that serves up quotes
+
+3. postgres database service
+Database containing quotes
+
+After installation (helm install...) you'll need to set one or two environment variables.
+
+1. REQUIRED: environment variable ##QOTD_API_URL## in deployment "qotd-website"
+The value must be the URL of the qotd-backend service, appended with "/quotes/random"
+
+For example: 
+
+oc set env deploy/qotd-website QOTD_API_URL=https://qotd-backend-userid-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/quotes/random
+
+After this, the qotd-website will replace the existing pod and any quotes supplied are hard-coded into the qotd-backend service.
+
+2. OPTIONAL: environment variable USE_DB in deployment "qotd-backend"
+This value must be set to "true" for the backend to switch from using hard-coded quotes to reading from the database.
+
+For example:
+
+oc set env deploy/qotd-backend USE_DB=true
