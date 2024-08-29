@@ -10,6 +10,7 @@ qotdbackend:
      
 qotdwebsite:
   image: "quay.io/rhdevelopers/qotd-website-nodejs:latest"
+# image: "quay.io/donschenck/qotd-frontend:openshiftfordotnetdevelopers"
 
 frontend:
   replicas: 1
