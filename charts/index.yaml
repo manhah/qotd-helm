@@ -3,32 +3,12 @@ entries:
   qotd-system:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-10-17T22:33:11.701296863Z"
+    created: "2024-10-17T22:44:23.822273131Z"
     description: A Helm chart for Kubernetes
-    digest: e61bbb6f603b43d973e3431310cca2297dd92b40b6f33d1519d0d8b6eade6caf
-    name: qotd-system
-    type: application
-    urls:
-    - qotd-system-0.3.0.tgz
-    version: 0.3.0
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2024-10-17T22:33:11.700918638Z"
-    description: A Helm chart for Kubernetes
-    digest: 73758f80e08c1dbed35ceae3f32fd6814d08b4f728cda85ff83e69465f23f7e6
-    name: qotd-system
-    type: application
-    urls:
-    - qotd-system-0.2.0.tgz
-    version: 0.2.0
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2024-10-17T22:33:11.700501091Z"
-    description: A Helm chart for Kubernetes
-    digest: 87320cb7cd31218dab0dee9e37543d29a1749c152e4e9c81c8551a57af2445cd
+    digest: 1985e00f4d7b14a3813c9a10a28673faea510f13a0d3381e3cd02588a3a4822b
     name: qotd-system
     type: application
     urls:
     - qotd-system-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-17T22:33:11.69995889Z"
+generated: "2024-10-17T22:44:23.821706318Z"
