@@ -17,6 +17,7 @@ frontend:
 
 backend:
   replicas: 1
+  qotd_api_url: SET_VALUE_HERE_OR_ENV_VAR
 
 route:
   enabled: true

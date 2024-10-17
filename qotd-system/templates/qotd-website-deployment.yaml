@@ -26,5 +26,5 @@ spec:
         image: {{ .Values.qotdwebsite.image | quote }}
         env:
           - name: QOTD_API_URL
-            value: '##QOTD_API_URL##'
+            value: {{ .Values.backend.qotd_api_url }}
         imagePullPolicy: Always
