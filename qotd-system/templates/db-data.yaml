@@ -1,34 +1,6 @@
 apiVersion: v1
 data:
-  Quotes.csv: "quoteId,author,quotation\r\n0,\"I got a fever, and the only prescription
-    is more cowbell.\",\"Christopher Walken\"\r\n1,\"Knowledge is power.\",\"Francis
-    Bacon\"\r\n2,\"Life is really simple, but we insist on making it complicated.\",\"Confucius\"\r\n3,\"This
-    above all, to thine own self be true.\",\"William Shakespeare\"\r\n4,\"Never complain.
-    Never explain.\",\"Katharine Hepburn\"\r\n5,\"Doo bee doo bee dooo.\",\"Frank
-    Sinatra\"\r\n6,\"These are the times that try mens' souls...\",\"Thomas Paine\"\r\n7,\"Yeah,
-    well, that's just like ... you opinion, man.\",\"The Dude\"\r\n8,\"The greatest
-    glory in living lies not in never falling, but in rising every time we fall.\",\"Nelson
-    Mandela\"\r\n9,\"The way to get started is to quit talking and begin doing.\",\"Walt
-    Disney\"\r\n10,\"Your time is limited, so don't waste it living someone else's
-    life. Don't be trapped by dogma - which is living with the results of other people's
-    thinking.\",\"Steve Jobs\"\r\n11,\"The future belongs to those who believe in
-    the beauty of their dreams.\",\"Eleanor Roosevelt\"\r\n12,\"If you look at what
-    you have in life, you'll always have more. If you look at what you don't have
-    in life, you'll never have enough.\",\"Oprah Winfrey\"\r\n13,\"If you set your
-    goals ridiculously high and it's a failure, you will fail above everyone else's
-    success.\",\"James Cameron\"\r\n14,\"You may say I'm a dreamer, but I'm not the
-    only one. I hope someday you'll join us. And the world will live as one.\",\"John
-    Lennon\"\r\n15,\"People often say that motivation doesn't last. Well, neither
-    does bathing -- that's why we recommend it daily.\",\"Zig Ziglar\"\r\n16,\"Someday
-    is not a day of the week.\",\"Denise Brennan-Nelson\"\r\n17,\"Hire character.
-    Train skill.\",\"Peter Schutz\"\r\n18,\"Your time is limited, so don't waste it
-    living someone else's life.\",\"Steve Jobs\"\r\n19,\"Sales are contingent upon
-    the attitude of the salesman -- not the attitude of the prospect.\",\"W. Clement
-    Stone\"\r\n20,\"Everyone lives by selling something.\",\"Robert Louis Stevenson\"\r\n21,\"If
-    you are not taking care of your customer, your competitor will.\",\"Bob Hooey\"\r\n22,\"The
-    golden rule for every businessman is this: Put yourself in your customer's place.\",\"Orison
-    Swett Marden\"\r\n23,\"If you cannot do great things, do small things in a great
-    way.\",\"Napoleon Hill\""
+  Quotes.csv: "quoteId,author,quotation\r\n0,\"test1.\",\"TESTNAME1\""
   build_tables.sql: "CREATE TABLE IF NOT EXISTS quotes (\r\n\tquoteId   int,\r\n    quotation
     varchar( 256 ),\r\n\tauthor    varchar(  80 )\r\n);"
 kind: ConfigMap
